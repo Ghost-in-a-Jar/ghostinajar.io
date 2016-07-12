@@ -90,3 +90,12 @@ docs/_build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.idea/encodings.xml
+.idea/ghostinajar.io.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+blog/templates/
+static/
+templates/
