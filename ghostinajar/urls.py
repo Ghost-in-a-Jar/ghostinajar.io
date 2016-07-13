@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 admin.autodiscover()
 
-urlpatterns = url('',
+urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='base.html')),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
