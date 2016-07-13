@@ -96,6 +96,6 @@ Thumbs.db
 .idea/misc.xml
 .idea/modules.xml
 .idea/workspace.xml
-Blog/templates/
+blog/templates/
 static/
 templates/
