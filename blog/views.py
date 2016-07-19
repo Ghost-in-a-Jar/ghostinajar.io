@@ -17,7 +17,7 @@ def index(request):
         context_dict = {'posts': post_list}
 
         # Render the response and send it back!
-        return render_to_response('index.html', context_dict, context)
+        return render_to_response('static/index.html', context_dict, context)
 def posts(request):
     return render(request, "post.html", {})
 def about(request):
