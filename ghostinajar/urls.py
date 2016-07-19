@@ -21,8 +21,8 @@ from blog import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^about/', views.about),
+    url(r'^about/$', views.about),
     url(r'^posts/(?P<post_name_url>\w+)/$', views.posts, name='post'),
-    url(r'^contact/', views.contact),
+    url(r'^contact/$', views.contact),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
