@@ -13,7 +13,7 @@ def index(request):
     # Retrieve the top 5 only - or all if less than 5.
     # Place the list in our context_dict dictionary which will be passed to the template engine.
     post_list = Post.objects.order_by('updated')[:5]
-    context_dict = {'posts': post_list}
+    context_dict = {'post_list': post_list}
     # Render the response and send it back!
     return render_to_response('index.html', context_dict, context)
 
