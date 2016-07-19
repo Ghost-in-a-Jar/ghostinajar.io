@@ -18,8 +18,8 @@ def index(request):
     return render_to_response('index.html', context_dict, context)
 
 def posts(request):
-    return render(request, "post.html", {})
+    pass
 def about(request):
-    return render(request, "about.html", {})
+    pass
 def contact(request):
-    return render(request, "contact.html", {})
+    pass
