@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^posts/', TemplateView.as_view(template_name='post.html')),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
+    url(r'^admin/',include(admin.site.urls))
 ]
