@@ -22,7 +22,7 @@ from blog import views
 urlpatterns = [
     url(r'^', include('blog.urls',namespace='index')),
     url(r'^about/', include('blog.urls',namespace='about')),
-    url(r'^posts/', include('blog.urls',namespace='posts')),
+    url(r'^posts/', include('blog.urls',namespace='Post')),
     #url(r'^posts/(?P<post_name_url>\w+)/$', views.posts, name='post'),
     url(r'^contact/', include('blog.urls',namespace='contact')),
     url(r'^admin/', include(admin.site.urls)),
