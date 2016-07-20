@@ -20,10 +20,10 @@ from django.conf.urls.static import static
 from blog import views
 
 urlpatterns = [
-    url(r'^', include('blog.urls',namespace='index')),
-    url(r'^about/', include('blog.urls',namespace='about')),
-    url(r'^posts/', include('blog.urls',namespace='Post')),
+    url(r'^$', views.index, name='index'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^posts/$', views.posts, name='posts'),
     #url(r'^posts/(?P<post_name_url>\w+)/$', views.posts, name='post'),
-    url(r'^contact/', include('blog.urls',namespace='contact')),
+    url(r'^contact/$', views.contact, name='contact'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
