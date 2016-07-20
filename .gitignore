@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 
+/apache/
+/static/
+/templates/
+/blog/migrations/
 # C extensions
 *.so
 
