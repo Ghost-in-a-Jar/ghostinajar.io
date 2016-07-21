@@ -6,7 +6,6 @@ __pycache__/
 /.idea/
 /apache/
 /static/
-/templates/
 /blog/migrations/
 # C extensions
 *.so
@@ -102,5 +101,4 @@ Thumbs.db
 .idea/misc.xml
 .idea/modules.xml
 .idea/workspace.xml
-static/
 crud.md
