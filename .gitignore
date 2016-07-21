@@ -11,8 +11,6 @@ __pycache__/
 # C extensions
 *.so
 
-/static/
-
 # Distribution / packaging
 bin/
 build/
@@ -104,7 +102,5 @@ Thumbs.db
 .idea/misc.xml
 .idea/modules.xml
 .idea/workspace.xml
-blog/templates/
 static/
-templates/
 crud.md
