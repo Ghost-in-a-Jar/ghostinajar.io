@@ -29,8 +29,7 @@ def posts(request, template='post_index.html', extra_context=None):
             preview.append(word+' ')
         previews.append(preview+'...')
     context = {
-        'post_list': post_list,
-        'previews':previews
+        'zipped':zip(post_list, previews),
     }
     if extra_context is not None:
         context.update(extra_context)
