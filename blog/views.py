@@ -3,8 +3,9 @@ from blog.models import Post
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from endless_pagination.decorators import page_template
 
-def index(request):
+def index(request, template='index.html'):
     # Obtain the context from the HTTP request.
     context = RequestContext(request)
 
@@ -15,10 +16,21 @@ def index(request):
     post_list = Post.objects.order_by('updated')[:5]
     context_dict = {'post_list': post_list}
     # Render the response and send it back!
-    return render_to_response('index.html', context_dict, context)
+    return render_to_response(template, context_dict, context)
 
-def posts(request):
+@page_template('post_index_page.html')
+def post_index(request, template='post_index.html', extra_context=None):
+    context = {
+        'post_list': Post.objects.all(),
+    }
+    if extra_context is not None:
+        context.update(extra_context)
+    return render_to_response(
+        template, context, context_instance=RequestContext(request))
+
+def post(request, template='post.html'):
     pass
+
 def about(request):
     pass
 def contact(request):

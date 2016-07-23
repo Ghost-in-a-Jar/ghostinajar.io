@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% include page_template %}
+
+{% block title %} ghostinajar.io - blog {% endblock %}
+
+{% block header %}
+<header class="intro-header" style="background-image: url('/static/img/blog.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>ghost in a jar</h1>
+                    <hr class="small">
+                    <span class="subheading">3 32 39.0, −27° 47′ 29.1″</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+    <script>
+        $.endlessPaginate({
+            paginateOnScroll: true,
+            paginateOnScrollChunkSize: 5
+        });
+    </script>
+{% endblock %}
+
+
+{% endblock %}
