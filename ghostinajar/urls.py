@@ -24,7 +24,7 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^about/$', views.about, name='about'),
-    url(r'^posts/$', views.post_index, name='posts'),
+    url(r'^posts/$', views.post_index, name='post_index'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
