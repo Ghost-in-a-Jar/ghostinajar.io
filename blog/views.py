@@ -19,7 +19,7 @@ def index(request, template='index.html'):
     return render_to_response(template, context_dict, context)
 
 @page_template('post_index_page.html')
-def post_index(request, template='post_index.html', extra_context=None):
+def posts(request, template='post_index.html', extra_context=None):
     context = {
         'post_list': Post.objects.all(),
     }
