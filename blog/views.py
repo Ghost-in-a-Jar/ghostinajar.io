@@ -31,10 +31,10 @@ def posts(request, template='post_index.html', extra_context=None):
         template, context, context_instance=RequestContext(request))
 
 def post(request, slug, id, template='post.html'):
-    context = RequestContext(request)
     post=get_object_or_404(pk=id)
-    context_dict = {'post':post}
-    return render_to_response(template, context_dict, context)
+    return render(request, template, {
+        'post': post,
+    })
 
 def about(request, template='about.html'):
     context = RequestContext(request)
