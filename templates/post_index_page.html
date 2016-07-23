@@ -11,8 +11,8 @@
             {{ post.subtitle }}
         </h3>
     </a>
-    {% for i in '0123456789' %}
-    {{ post.content.|add:i }}
+    {% for i in '0' %}
+    {{ post.content}}
     {% endfor %}...
     <p class="post-meta">Posted by Tristan on {{ post.timestamp }}</p>
 </div>
