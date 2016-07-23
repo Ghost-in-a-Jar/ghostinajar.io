@@ -31,7 +31,8 @@ def posts(request, template='post_index.html', extra_context=None):
 def post(request, template='post.html'):
     pass
 
-def about(request):
-    pass
+def about(request, template='about.html'):
+    context = RequestContext(request)
+    return render_to_response(template, context)
 def contact(request):
     pass
