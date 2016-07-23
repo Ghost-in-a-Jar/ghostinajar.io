@@ -21,16 +21,8 @@ def home(request, template='home.html'):
 @page_template('post_index_page.html')
 def posts(request, template='post_index.html', extra_context=None):
     post_list=Post.objects.all()
-    previews=[]
-
-    for post in post_list:
-        preview = []
-        for word in post.get(pk='content').split()[:50]:
-            preview.append(word+' ')
-        previews.append(preview.append('...'))
     context = {
         'post_list':post_list,
-        'zipped':zip(post_list, previews),
     }
     if extra_context is not None:
         context.update(extra_context)
