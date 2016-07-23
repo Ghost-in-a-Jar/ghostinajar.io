@@ -23,9 +23,9 @@ def posts(request, template='post_index.html', extra_context=None):
     post_list=Post.objects.all()
     previews=[]
 
-    for p in post_list:
+    for post in post_list:
         preview = []
-        for word in str(p).split(' ')[:50]:
+        for word in post.content.split()[:50]:
             preview.append(word+' ')
         previews.append(preview+'...')
     context = {
