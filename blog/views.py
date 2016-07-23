@@ -3,7 +3,7 @@ from blog.models import Post
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from endless_pagination.decorators import page_template
+from el_pagination.decorators import page_template
 
 def index(request, template='index.html'):
     # Obtain the context from the HTTP request.
