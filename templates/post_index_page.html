@@ -1,4 +1,5 @@
 {% load el_pagination_tags %}
+{% load split %}
 
 {% paginate post_list %}
 {% for post in post_list %}
@@ -13,7 +14,7 @@
     </a>
     {% with post.content|split:' ' as words %}
     {% for i in '0' %}
-    {{ words.0}} 
+    {{ words.0}}
     {% endfor %}...
     {% endwith %}
     <p class="post-meta">Posted by Tristan on {{ post.timestamp }}</p>
