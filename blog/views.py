@@ -2,6 +2,7 @@ from django.shortcuts import render
 from blog.models import Post
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from el_pagination.decorators import page_template
 
@@ -29,8 +30,9 @@ def posts(request, template='post_index.html', extra_context=None):
     return render_to_response(
         template, context, context_instance=RequestContext(request))
 
-def post(request, template='post.html'):
-    pass
+def post(request, slug, id, template='post.html'):
+    post=get_object_or_404(pk=id)
+    context = RequestContext(request)
 
 def about(request, template='about.html'):
     context = RequestContext(request)
