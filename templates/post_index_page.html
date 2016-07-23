@@ -11,9 +11,11 @@
             {{ post.subtitle }}
         </h3>
     </a>
+    {% with post.content|split:' ' as words %}
     {% for i in '0' %}
-    {{ post.content.0}}
+    {{ words.0}} 
     {% endfor %}...
+    {% endwith %}
     <p class="post-meta">Posted by Tristan on {{ post.timestamp }}</p>
 </div>
 {% endfor %}

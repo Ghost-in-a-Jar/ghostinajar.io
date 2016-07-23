@@ -20,10 +20,8 @@ def home(request, template='home.html'):
 
 @page_template('post_index_page.html')
 def posts(request, template='post_index.html', extra_context=None):
-    preview = range(50)
     context = {
         'post_list': Post.objects.all(),
-        'preview': preview,
     }
     if extra_context is not None:
         context.update(extra_context)
