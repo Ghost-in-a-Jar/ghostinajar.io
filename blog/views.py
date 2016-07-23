@@ -27,7 +27,7 @@ def posts(request, template='post_index.html', extra_context=None):
         preview = []
         for word in post.content.encode('utf8').split()[:50]:
             preview.append(word+' ')
-        previews.append(preview+'...')
+        previews.append(preview.append('...'))
     context = {
         'zipped':zip(post_list, previews),
     }
