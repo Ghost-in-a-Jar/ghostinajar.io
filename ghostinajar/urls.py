@@ -19,11 +19,12 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from blog import views
 
+admin.autodiscover()
+
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^about/$', views.about, name='about'),
     url(r'^posts/$', views.post_index, name='posts'),
-    #url(r'^posts/(?P<post_name_url>\w+)/$', views.posts, name='post'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
