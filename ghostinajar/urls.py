@@ -23,7 +23,7 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^about/$', views.about, namesp='about'),
+    url(r'^about/$', views.about, name='about'),
     url(r'^posts/$', views.posts, name='posts'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^admin/', include(admin.site.urls)),

@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from el_pagination.decorators import page_template
 
-def home(request, template='index.html'):
+def home(request, template='home.html'):
     # Obtain the context from the HTTP request.
     context = RequestContext(request)
 
