@@ -21,12 +21,11 @@ def home(request, template='home.html'):
 @page_template('post_index_page.html')
 def posts(request, template='post_index.html', extra_context=None):
     post_list=Post.objects.all()
-    content_list=post_list.get(pk='content')
     previews=[]
 
-    for content in content_list:
+    for post in post_list:
         preview = []
-        for word in content.split()[:50]:
+        for word in post.get(pk='content').split()[:50]:
             preview.append(word+' ')
         previews.append(preview.append('...'))
     context = {
