@@ -22,9 +22,9 @@ from blog import views
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^about/$', views.about),
-    url(r'^posts/$', views.posts),
-    url(r'^contact/$', views.contact),
+    url(r'^$', views.home, name='home'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^posts/$', views.posts, name='posts'),
+    url(r'^contact/$', views.contact, name='contact'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
