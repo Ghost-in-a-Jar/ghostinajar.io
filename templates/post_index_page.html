@@ -1,7 +1,7 @@
 {% load el_pagination_tags %}
 
 {% paginate post_list %}
-{% for post in post_list and preview in previews %}
+{% for post in post_list %}
 <div class="post-preview">
     <a href="#">
         <h2 class="post-title">
@@ -11,7 +11,7 @@
             {{ post.subtitle }}
         </h3>
     </a>
-    {{ post.preview }}
+    {{ post.previews.forloop.counter0 }}
     <p class="post-meta">Posted by Tristan on {{ post.timestamp }}</p>
 </div>
 {% endfor %}
