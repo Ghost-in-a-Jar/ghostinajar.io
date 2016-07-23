@@ -25,6 +25,7 @@
 
 {% block js %}
     {{ block.super }}
+    {% load static from staticfiles %}
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{% static 'js/el-pagination.js' %}"></script>
     <script>
