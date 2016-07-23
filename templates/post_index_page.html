@@ -11,7 +11,9 @@
             {{ post.subtitle }}
         </h3>
     </a>
-    {{ post.previews.forloop.counter0 }}
+    {% with preview=post.previews.forloop.counter0%}
+    {{ preview }}
+    {% endwith %}
     <p class="post-meta">Posted by Tristan on {{ post.timestamp }}</p>
 </div>
 {% endfor %}
