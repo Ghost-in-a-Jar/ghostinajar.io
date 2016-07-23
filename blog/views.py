@@ -21,7 +21,7 @@ def home(request, template='home.html'):
 @page_template('post_index_page.html')
 def posts(request, template='post_index.html', extra_context=None):
     post_list=Post.objects.all()
-    content_list=Post.objects.get('content')
+    content_list=Post.objects.get(pk='content')
     previews=[]
 
     for content in content_list:
