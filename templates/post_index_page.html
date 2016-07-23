@@ -12,7 +12,7 @@
         </h3>
     </a>
     {% for i in preview %}
-    {{ post.content.|add:{{ i }} }}
+    {{ post.content.|add:'{{ i }}' }}
     {% endfor %}...
     <p class="post-meta">Posted by Tristan on {{ post.timestamp }}</p>
 </div>
