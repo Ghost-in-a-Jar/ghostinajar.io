@@ -10,9 +10,11 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now = False, auto_now_add=True)
     updated = models.DateTimeField(auto_now = True, auto_now_add=False)
 
+    slug = models.SlugField(unique=True)
+
     @permalink
     def get_absolute_url(self):
-        return ('article', (), {
+        return ('post', (), {
             'slug': self.slug,
             'id': self.id,
         })
