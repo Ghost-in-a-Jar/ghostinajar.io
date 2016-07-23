@@ -26,7 +26,7 @@
 {% block js %}
     {{ block.super }}
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{{ STATIC_URL }}js/el-pagination.js"></script>
+    <script src="{% static 'js/el-pagination.js' %}"></script>
     <script>
         $.endlessPaginate({
             paginateOnScroll: true,
