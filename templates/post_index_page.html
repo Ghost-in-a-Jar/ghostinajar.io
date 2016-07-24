@@ -3,7 +3,7 @@
 {% paginate post_list %}
 {% for post in post_list %}
 <div class="post-preview">
-    <a href="{% url 'post' slug=p.slug %}">
+    <a href="{% url 'post' slug=post.slug %}">
         <h2 class="post-title">
             {{ post.title }}
         </h2>
