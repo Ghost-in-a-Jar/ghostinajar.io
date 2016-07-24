@@ -8,9 +8,10 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>ghost in a jar</h1>
+                    <h1>{{ post.title }}</h1>
                     <hr class="small">
-                    <span class="subheading">3 32 39.0, −27° 47′ 29.1″</span>
+                    <span class="subheading">{{ post.subtitle }}</span>
+                    <p class="meta">Posted by Tristan on {{ post.timestamp }}</p>
                 </div>
             </div>
         </div>
@@ -19,6 +20,15 @@
 {% endblock %}
 
 {% block content %}
+<article>
+     <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    {{ post.content}}
+                </div>
+            </div>
+     </div>
+</article>
 
 {{ post.content }}
 
