@@ -15,7 +15,10 @@ class Post(models.Model):
 
     @permalink
     def get_absolute_url(self):
-        return 'post', (self.slug,)
+        return ('post', (),
+                {
+                    'slug': self.slug,
+                })
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -23,4 +26,4 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
 
     def __unicode__(self):
-        return unicode(self.title)
+        return self.content
