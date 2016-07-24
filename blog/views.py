@@ -30,7 +30,7 @@ def posts(request, template='post_index.html', extra_context=None):
     return render_to_response(
         template, context, context_instance=RequestContext(request))
 
-def post(request, slug, id, template='post.html'):
+def post(request, slug, template='post.html'):
     post=get_object_or_404(Post, slug=slug)
     return render(request, template, {
         'post': post,

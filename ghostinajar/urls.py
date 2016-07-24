@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^about/$', views.about, name='about'),
     url(r'^posts/$', views.posts, name='posts'),
-    url(r'^(?P<slug>[-\w\d]+),(?P<id>\d+)/$', view=views.post, name='post'),
+    url(r'^posts/(?P<slug>[-\w\d]+)/$', view=views.post, name='post'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
