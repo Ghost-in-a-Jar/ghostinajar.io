@@ -21,9 +21,9 @@
 
 {% block content %}
 <article>
-
+{% autoescape on %}
     {{ post.content }}
-
+{% endautoescape %}
 </article>
 
 {% endblock %}
