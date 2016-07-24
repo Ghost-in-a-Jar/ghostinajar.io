@@ -39,5 +39,10 @@ def post(request, slug, template='post.html'):
 def about(request, template='about.html'):
     context = RequestContext(request)
     return render_to_response(template, context)
-def contact(request):
-    pass
+
+def contact(request, template='contact.html'):
+    form_class = ContactForm
+
+    return render(request, 'contact.html', {
+        'form': form_class,
+    })
