@@ -26,7 +26,7 @@
                 <form name="sentMessage" id="contactForm" novalidate>
                     <div class="form-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label class="col-md-4 control-label">Name</label>
+                            <label class="col-md-4 control-label" for="contact_name">Name</label>
                             {% csrf_token %}
                             {{ form.contact_name }}
                             <p class="help-block text-danger"></p>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label class="col-md-4 control-label">Email Address</label>
+                            <label class="col-md-4 control-label" for="contact_email">Email Address</label>
                             {% csrf_token %}
                             {{ form.contact_email }}
                             <p class="help-block text-danger"></p>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label class="col-md-4 control-label">Message</label>
+                            <label class="col-md-4 control-label" for="content">Message</label>
                             {% csrf_token %}
                             {{ form.content }}
                             <p class="help-block text-danger"></p>
