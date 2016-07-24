@@ -19,14 +19,14 @@
 {% endblock %}
 
 {% block content %}
-{% for post in post_list %}
+{% for p in post_list %}
 <div class="post-preview">
-    <a href="{% url post.slug %}">
+    <a href="{% url post %}">
         <h2 class="post-title">
-            {{ post.title }}
+            {{ p.title }}
         </h2>
         <h3 class="post-subtitle">
-            {{ post.subtitle }}
+            {{ p.subtitle }}
         </h3>
     </a>
     <p class="post-meta">Posted by Tristan on {{ post.timestamp }}</p>
