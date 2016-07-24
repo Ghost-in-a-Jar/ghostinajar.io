@@ -44,6 +44,6 @@ def about(request, template='about.html'):
 def contact(request, template='contact.html'):
     form_class = ContactForm
 
-    return render(request, 'contact.html', {
+    return render(request, template, {
         'form': form_class,
     })
