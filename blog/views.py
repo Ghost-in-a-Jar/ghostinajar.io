@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from el_pagination.decorators import page_template
+from blog.forms import ContactForm
 
 def home(request, template='home.html'):
     # Obtain the context from the HTTP request.
