@@ -24,9 +24,8 @@
                 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
                 <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
                 <form name="sentMessage" id="contactForm" novalidate>
-                    <div class="form-group">
+                    <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label class="col-md-4 control-label" for="contact_name">Name</label>
                             {% csrf_token %}
                             {{ form.contact_name }}
                             <p class="help-block text-danger"></p>
@@ -34,7 +33,6 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label class="col-md-4 control-label" for="contact_email">Email Address</label>
                             {% csrf_token %}
                             {{ form.contact_email }}
                             <p class="help-block text-danger"></p>
@@ -42,7 +40,6 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label class="col-md-4 control-label" for="content">Message</label>
                             {% csrf_token %}
                             {{ form.content }}
                             <p class="help-block text-danger"></p>
