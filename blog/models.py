@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.db.models import permalink
+from django.template.defaultfilters import slugify
 
 class Post(models.Model):
     title = models.CharField(max_length=120)
@@ -16,6 +17,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         return 'post', (self.slug,)
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return unicode(self.title)
