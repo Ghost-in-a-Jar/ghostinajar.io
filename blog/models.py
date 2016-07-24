@@ -14,7 +14,11 @@ class Post(models.Model):
 
     @permalink
     def get_absolute_url(self):
-        return 'blog:post', (self.slug,)
+        def get_absolute_url(self):
+            return ('article', (), {
+                'slug': self.slug,
+                'id': self.id,
+            })
 
 
     def __unicode__(self):
