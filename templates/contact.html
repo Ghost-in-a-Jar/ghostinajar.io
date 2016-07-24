@@ -24,23 +24,23 @@
                 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
                 <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
                 <form name="sentMessage" id="contactForm" novalidate>
-                    <div class="row control-group">
+                    <div class="form-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
+                            <label class="col-md-4 control-label">Name</label>
                             {{ form.contact_name }}
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
+                            <label class="col-md-4 control-label">Email Address</label>
                             {{ form.contact_email }}
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Message</label>
+                            <label class="col-md-4 control-label">Message</label>
                             {{ form.content }}
                             <p class="help-block text-danger"></p>
                         </div>
