@@ -6,6 +6,10 @@ from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from el_pagination.decorators import page_template
 from blog.forms import ContactForm
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+from django.template import Context
+from django.shortcuts import redirect
 
 def home(request, template='home.html'):
     # Obtain the context from the HTTP request.
@@ -43,6 +47,38 @@ def about(request, template='about.html'):
 
 def contact(request, template='contact.html'):
     form_class = ContactForm
+
+    if request.method == 'POST':
+        form = form_class(data=request.POST)
+
+        if form.is_valid():
+            contact_name = request.POST.get(
+                'contact_name'
+                , '')
+            contact_email = request.POST.get(
+                'contact_email'
+                , '')
+            form_content = request.POST.get('content', '')
+
+            # Email the profile with the
+            # contact information
+            get_template('contact_template.txt')
+        context = Context({
+            'contact_name': contact_name,
+            'contact_email': contact_email,
+            'form_content': form_content,
+        })
+        content = template.render(context)
+
+        email = EmailMessage(
+            "New contact form submission",
+            content,
+            "ghostinajar.io" + '',
+            ['tristan@ghostinajar.io'],
+            headers={'Reply-To': contact_email}
+        )
+        email.send()
+        return redirect('contact')
 
     return render(request, template, {
         'form': form_class,
