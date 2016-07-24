@@ -31,7 +31,7 @@ def posts(request, template='post_index.html', extra_context=None):
         template, context, context_instance=RequestContext(request))
 
 def post(request, slug, id, template='post.html'):
-    post=get_object_or_404(pk=id)
+    post=get_object_or_404(Post, slug=slug)
     return render(request, template, {
         'post': post,
     })
